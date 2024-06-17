@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={[robotoCondensed.className, styles.html].join(' ')}
     >
       <body className={styles.body}>
-        <FavoritesProvider>
+        <FavoritesProvider initialState={[]}>
           <header className={styles.header}>
             <nav className={styles.nav}>
               <Link href='/'>

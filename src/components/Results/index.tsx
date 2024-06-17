@@ -20,7 +20,7 @@ export default function Results({ favoritesOnly }: { favoritesOnly: boolean }) {
               <Link key={id} href={id}>
                 <Card
                   image={`${imagePath}/standard_xlarge.${imageExtension}`}
-                  name={name}
+                  name={name as unknown as string}
                   fullHeart={isFavorite}
                   onClickHeart={(event) => {
                     event.preventDefault();

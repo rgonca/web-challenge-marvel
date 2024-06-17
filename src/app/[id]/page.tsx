@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 import ComicCarousel from '@/components/ComicCarousel';
-import {ComicProps} from '@/components/Comic';
+import { ComicProps } from '@/components/Comic';
 import { getCharacter, getCharacterComics } from '@/api';
 import getServerSideQueryParams from '@/utils/getServerSideQueryParams';
 import Banner from '@/components/Banner';

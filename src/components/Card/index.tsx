@@ -15,7 +15,7 @@ export default function Card({ image, name, fullHeart, onClickHeart }: CardProps
     <div className={styles.card}>
       <ExternalImage
         src={image}
-        alt={`Imagen del personaje ${name}`}
+        alt={`Character image ${name}`}
         className={styles.image}
       />
       <div className={styles.info}>
