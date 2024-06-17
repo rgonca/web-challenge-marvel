@@ -7,9 +7,11 @@ import { getCharacters } from '@/api';
 import getServerSideQueryParams from '@/utils/getServerSideQueryParams';
 
 export default async function Page() {
+
+  const characters = await getCharacters(undefined, getServerSideQueryParams());
   return (
     <CharactersProvider
-      initialState={await getCharacters(undefined, getServerSideQueryParams())}
+      initialState={characters}
     >
       <main className={styles.main}>
         <Search />

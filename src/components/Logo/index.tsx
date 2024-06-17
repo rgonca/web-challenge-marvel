@@ -1,6 +1,7 @@
-import Image from 'next/image'
-import logo from './logo.svg'
+import React from "react";
+import Image from "next/image";
+import logo from "./logo.svg";
 
-export default function Logo () {
-  return <Image src={logo} alt='Marvel logo' priority />
+export default function Logo(): JSX.Element {
+  return <Image src={logo} alt="Marvel logo" priority />;
 }

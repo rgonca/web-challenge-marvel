@@ -2,8 +2,9 @@
   --transition-duration: 0.5s;
 }
 
-.picture {
-  display: block;
+.image {
+  width: 189px;
+  height: 188.5px;
 }
 
 .red {
@@ -12,7 +13,7 @@
   left: 0;
   right: 0;
   height: 5.38px;
-  background-color: #ec1d24;
+  background-color: var(--marvel-red);
   transition-property: height;
   transition-duration: var(--transition-duration);
 }
@@ -37,6 +38,16 @@
     100% calc(100% - var(--corner-size))
   );
   padding: 5.38px 16px calc(var(--corner-size) / 2);
+
+  > .heart {
+    filter: brightness(1);
+    width: 12px;
+  }
+
+  > .heart--full {
+    transition-property: filter;
+    transition-duration: var(--transition-duration);
+  }
 }
 
 .name {
@@ -44,12 +55,11 @@
   color: white;
   font-size: 14px;
   line-height: 16.41px;
-}
-
-.heart {
-  width: 12px;
-  transition-property: filter;
-  transition-duration: var(--transition-duration);
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 128px;
 }
 
 .card:hover .heart {
@@ -57,7 +67,7 @@
 }
 
 @media (width <= 834px) {
-  .picture {
+  .image {
     width: 172.5px;
   }
 }

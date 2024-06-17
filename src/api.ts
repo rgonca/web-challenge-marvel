@@ -19,13 +19,13 @@ const getData = async (path: string, queryParams = {}) => {
 };
 
 export const getCharacters = async (
-  nameStartsWith: string,
+  nameStartsWith: string | undefined,
   otherParams: any
 ) => {
   const queryParams: { limit: number; nameStartsWith?: string } = {
     limit: 50
   };
-  if (typeof nameStartsWith == "string" && nameStartsWith.length > 0) {
+  if (typeof nameStartsWith === "string" && nameStartsWith.length > 0) {
     queryParams.nameStartsWith = nameStartsWith;
   }
   return formatCharactersResponse(
@@ -33,15 +33,21 @@ export const getCharacters = async (
   );
 };
 
-export const getCharacter = async (characterId: any, otherParams: {} | undefined) =>
+export const getCharacter = async (
+  characterId: any,
+  otherParams: {} | undefined
+) =>
   formatCharactersResponse(
     await getData(`characters/${characterId}`, otherParams)
   );
 
-  export const getCharacterComics = async (characterId: any, otherParams: {} | undefined) =>
-    formatComicsResponse(
-      await getData(`characters/${characterId}/comics`, {
-        limit: 20,
-        ...otherParams,
-      })
-    );
+export const getCharacterComics = async (
+  characterId: any,
+  otherParams: {} | undefined
+) =>
+  formatComicsResponse(
+    await getData(`characters/${characterId}/comics`, {
+      limit: 20,
+      ...otherParams
+    })
+  );
