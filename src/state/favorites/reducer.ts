@@ -1,4 +1,4 @@
-const reducer = (state = {}, { type, payload }) => {
+const reducer = (state: { [key: string]: any } = {}, { type, payload }: { type: string, payload: any }) => {
   let newState = state;
   let updateLocalStorage = true;
   switch (type) {

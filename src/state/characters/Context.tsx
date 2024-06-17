@@ -6,10 +6,9 @@ interface CharactersContextType {
     setCharacters: (characters: Character[]) => void;
   }
 
-  // Provide a default value matching the context shape
 const defaultContextValue: CharactersContextType = {
-    characters: [], // Assuming characters is an array, adjust if it's different
-    setCharacters: () => {}, // No-op function as a placeholder
+    characters: [],
+    setCharacters: () => {},
   };
 
   const CharactersContext = createContext<CharactersContextType>(defaultContextValue);

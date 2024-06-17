@@ -5,7 +5,7 @@ import Context from './Context';
 import { Character } from '@/interfaces/character';
 
 interface CharactersProviderProps {
-  initialState: Character[]; // Adjust the type according to your actual initial state structure
+  initialState: Character[];
   children: ReactNode;
 }
 
