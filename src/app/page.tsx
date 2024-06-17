@@ -2,14 +2,13 @@ import React from 'react'
 import Results from '@/components/Results'
 import Search from '@/components/Search'
 import styles from './page.module.css'
-import CharactersProvider from '@/state/characters/Provider';
-import { getCharacters } from '@/api';
-import getServerSideQueryParams from '@/utils/getServerSideQueryParams';
-import { Character } from '@/interfaces/character';
+import CharactersProvider from '@/state/characters/Provider'
+import { getCharacters } from '@/api'
+import getServerSideQueryParams from '@/utils/getServerSideQueryParams'
+import { type Character } from '@/interfaces/character'
 
-export default async function Page() {
-
-  const characters = await getCharacters(undefined, getServerSideQueryParams());
+export default async function Page () {
+  const characters = await getCharacters(undefined, getServerSideQueryParams())
   return (
     <CharactersProvider
       initialState={characters as Character[]}
@@ -19,5 +18,5 @@ export default async function Page() {
         <Results favoritesOnly={false}/>
       </main>
     </CharactersProvider>
-  );
+  )
 }

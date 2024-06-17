@@ -1,16 +1,16 @@
-import styles from './index.module.css';
-import Heart from '../Heart';
-import { EMPTY_THICK, FULL } from '../Heart/constants';
-import ExternalImage from '../ExternalImage';
+import styles from './index.module.css'
+import Heart from '../Heart'
+import { EMPTY_THICK, FULL } from '../Heart/constants'
+import ExternalImage from '../ExternalImage'
 
 interface CardProps {
-  image: string;
-  name: string;
-  fullHeart: boolean;
-  onClickHeart: (event: React.MouseEvent<HTMLElement>) => void;
+  image: string
+  name: string
+  fullHeart: boolean
+  onClickHeart: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export default function Card({ image, name, fullHeart, onClickHeart }: CardProps) {
+export default function Card ({ image, name, fullHeart, onClickHeart }: CardProps) {
   return (
     <div className={styles.card}>
       <ExternalImage
@@ -31,5 +31,5 @@ export default function Card({ image, name, fullHeart, onClickHeart }: CardProps
         />
       </div>
     </div>
-  );
+  )
 }

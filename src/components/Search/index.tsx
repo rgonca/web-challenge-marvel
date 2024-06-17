@@ -1,21 +1,21 @@
-'use client';
-import Image from 'next/image';
-import styles from './index.module.css';
-import magnifyingGlass from './magnifying-glass.svg';
-import { useContext, useRef } from 'react';
-import CharactersContext from '@/state/characters/Context';
-import { getCharacters } from '@/api';
-import FavoritesContext from '@/state/favorites/Context';
-import { Character } from '@/interfaces/character';
+'use client'
+import Image from 'next/image'
+import styles from './index.module.css'
+import magnifyingGlass from './magnifying-glass.svg'
+import { useContext, useRef } from 'react'
+import CharactersContext from '@/state/characters/Context'
+import { getCharacters } from '@/api'
+import FavoritesContext from '@/state/favorites/Context'
+import { type Character } from '@/interfaces/character'
 
-export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
-  const requestRef = useRef(Promise.resolve());
-  const { characters, setCharacters } = useContext(CharactersContext);
-  const { favorites } = useContext(FavoritesContext);
-  const characterIds = Object.keys(characters);
+export default function Search ({ favoritesOnly }: { favoritesOnly: boolean }) {
+  const requestRef = useRef(Promise.resolve())
+  const { characters, setCharacters } = useContext(CharactersContext)
+  const { favorites } = useContext(FavoritesContext)
+  const characterIds = Object.keys(characters)
   const numResults = favoritesOnly
     ? characterIds.filter((id) => id in favorites).length
-    : characterIds.length;
+    : characterIds.length
 
   return (
     <div className={styles.searchWithResults}>
@@ -26,10 +26,9 @@ export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
           className={styles.inputSearch}
           placeholder='Search a character...'
           onChange={(event) => {
-            const promise = getCharacters(event.target.value, undefined);
-            requestRef.current = requestRef.current.then(() =>
-              promise.then((value: any) => setCharacters(value as Character[]))
-            );
+            const promise = getCharacters(event.target.value, undefined)
+            requestRef.current = requestRef.current.then(async () => { await promise.then((value: any) => { setCharacters(value as Character[]) }) }
+            )
           }}
         />
       </div>
@@ -37,5 +36,5 @@ export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
         {numResults} RESULT{numResults != 1 && 'S'}
       </span>
     </div>
-  );
+  )
 }

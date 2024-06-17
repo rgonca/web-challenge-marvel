@@ -15,10 +15,16 @@
         "react"
     ],
     "rules": {
-        "quotes": ["error", "double", { "avoidEscape": true }],
-        "semi": ["error", "always"],
-        "@typescript-eslint/quotes": "off",
-        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/quotes": "error",
+        "@typescript-eslint/semi": "error",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-dynamic-delete": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "no-case-declarations": "off",
+        "eqeqeq": "warn"
     },
     "settings": {
         "react": {

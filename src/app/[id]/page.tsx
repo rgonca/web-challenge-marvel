@@ -1,15 +1,15 @@
-import styles from './page.module.css';
-import ComicCarousel from '@/components/ComicCarousel';
-import { ComicProps } from '@/components/Comic';
-import { getCharacter, getCharacterComics } from '@/api';
-import getServerSideQueryParams from '@/utils/getServerSideQueryParams';
-import Banner from '@/components/Banner';
+import styles from './page.module.css'
+import ComicCarousel from '@/components/ComicCarousel'
+import { type ComicProps } from '@/components/Comic'
+import { getCharacter, getCharacterComics } from '@/api'
+import getServerSideQueryParams from '@/utils/getServerSideQueryParams'
+import Banner from '@/components/Banner'
 
-export default async function Page({ params: { id } }: { params: { id: any } }) {
+export default async function Page ({ params: { id } }: { params: { id: any } }) {
   const { name, description, imagePath, imageExtension } = (
     await getCharacter(id, getServerSideQueryParams())
-  )[id];
-  const comics: ComicProps[] = await getCharacterComics(id, getServerSideQueryParams()) as ComicProps[];
+  )[id]
+  const comics: ComicProps[] = await getCharacterComics(id, getServerSideQueryParams()) as ComicProps[]
   return (
     <main className={styles.main}>
       <Banner
@@ -22,5 +22,5 @@ export default async function Page({ params: { id } }: { params: { id: any } }) 
       <h2 className={styles.subtitle}>COMICS</h2>
       <ComicCarousel comics={comics} className={styles.carousel} />
     </main>
-  );
+  )
 }

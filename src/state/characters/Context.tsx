@@ -1,16 +1,16 @@
-import { createContext } from 'react';
-import { Character } from '@/interfaces/character';
+import { createContext } from 'react'
+import { type Character } from '@/interfaces/character'
 
 interface CharactersContextType {
-    characters: Character[];
-    setCharacters: (characters: Character[]) => void;
-  }
+  characters: Character[]
+  setCharacters: (characters: Character[]) => void
+}
 
 const defaultContextValue: CharactersContextType = {
-    characters: [],
-    setCharacters: () => {},
-  };
+  characters: [],
+  setCharacters: () => {}
+}
 
-  const CharactersContext = createContext<CharactersContextType>(defaultContextValue);
+const CharactersContext = createContext<CharactersContextType>(defaultContextValue)
 
-export default CharactersContext;
+export default CharactersContext

@@ -1,5 +1,5 @@
 const mapResultEntries = (response: any, mapper: any) =>
-  Object.fromEntries(response.data.results.map(mapper));
+  Object.fromEntries(response.data.results.map(mapper))
 
 export const formatCharactersResponse = (response: any) =>
   mapResultEntries(
@@ -8,17 +8,17 @@ export const formatCharactersResponse = (response: any) =>
       id,
       name,
       description,
-      thumbnail: { path: imagePath, extension: imageExtension },
+      thumbnail: { path: imagePath, extension: imageExtension }
     }: any) => [
       id,
       {
         name,
         imagePath,
         imageExtension,
-        description,
-      },
+        description
+      }
     ]
-  );
+  )
 
 export const formatComicsResponse = (response: any) =>
   mapResultEntries(
@@ -27,21 +27,21 @@ export const formatComicsResponse = (response: any) =>
       id,
       title,
       modified,
-      thumbnail: { path: imagePath, extension: imageExtension },
+      thumbnail: { path: imagePath, extension: imageExtension }
     }: {
-      id: number;
-      title: string;
-      modified: string;
+      id: number
+      title: string
+      modified: string
       thumbnail: {
-        path: string;
-        extension: string;
-      };
+        path: string
+        extension: string
+      }
     }) => [
       id,
       {
         title,
         year: new Date(modified).getUTCFullYear(),
-        image: `${imagePath}/portrait_xlarge.${imageExtension}`,
-      },
+        image: `${imagePath}/portrait_xlarge.${imageExtension}`
+      }
     ]
-  );
+  )

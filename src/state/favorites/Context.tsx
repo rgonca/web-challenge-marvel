@@ -1,20 +1,20 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-import { Character, CharacterDetails } from "@/interfaces/character";
+import { type Character, type CharacterDetails } from '@/interfaces/character'
 
 export interface FavoritesContextType {
-  favorites: { [id: string]: Character };
-  addFavorite: (id: any, character: CharacterDetails) => void;
-  removeFavorite: (id: any) => void;
+  favorites: Record<string, Character>
+  addFavorite: (id: any, character: CharacterDetails) => void
+  removeFavorite: (id: any) => void
 }
 
 const defaultContextValue: FavoritesContextType = {
   favorites: {},
   addFavorite: () => {},
-  removeFavorite: () => {},
-};
+  removeFavorite: () => {}
+}
 
 const FavoritesContext =
-  createContext<FavoritesContextType>(defaultContextValue);
+  createContext<FavoritesContextType>(defaultContextValue)
 
-export default FavoritesContext;
+export default FavoritesContext

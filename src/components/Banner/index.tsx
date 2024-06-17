@@ -1,26 +1,25 @@
-'use client';
-import { useContext } from 'react';
-import Heart from '../Heart';
-import styles from './index.module.css';
-import FavoritesContext from '@/state/favorites/Context';
-import { useParams } from 'next/navigation';
-import { EMPTY, FULL } from '../Heart/constants';
-import ExternalImage from '../ExternalImage';
+'use client'
+import { useContext } from 'react'
+import Heart from '../Heart'
+import styles from './index.module.css'
+import FavoritesContext from '@/state/favorites/Context'
+import { useParams } from 'next/navigation'
+import { EMPTY, FULL } from '../Heart/constants'
+import ExternalImage from '../ExternalImage'
 
 export interface BannerProps {
-  image: string;
-  name: string;
-  description: string;
-  imagePath: string;
-  imageExtension: string;
+  image: string
+  name: string
+  description: string
+  imagePath: string
+  imageExtension: string
 }
 
-
-export default function Banner({ image, name, description, imagePath, imageExtension }: BannerProps) {
+export default function Banner ({ image, name, description, imagePath, imageExtension }: BannerProps) {
   const { favorites, addFavorite, removeFavorite } =
-    useContext(FavoritesContext);
-  const { id } = useParams<{ id: any }>();
-  const isFavorite = id in favorites;
+    useContext(FavoritesContext)
+  const { id } = useParams<{ id: any }>()
+  const isFavorite = id in favorites
   return (
     <div className={styles.banner}>
       <ExternalImage src={image} alt={name} className={styles.image} />
@@ -38,13 +37,13 @@ export default function Banner({ image, name, description, imagePath, imageExten
                   name,
                   description,
                   imagePath,
-                  imageExtension,
-                });
+                  imageExtension
+                })
             }}
           />
         </div>
         <p className={styles.text}>{description}</p>
       </div>
     </div>
-  );
+  )
 }

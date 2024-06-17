@@ -1,10 +1,10 @@
-const reducer = (state: any, action: { type: any; payload: any; }) => {
+const reducer = (state: any, action: { type: any, payload: any }) => {
   switch (action.type) {
     case 'SET':
-      return action.payload;
+      return action.payload
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default reducer;
+export default reducer
