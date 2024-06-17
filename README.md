@@ -1,6 +1,6 @@
 # WEB CHALLENGE Marvel
 
-https://web-challenge-marvel-husx.vercel.app/
+https://web-challenge-marvel.vercel.app/
 
 ## How to execute
 
