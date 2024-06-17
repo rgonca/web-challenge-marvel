@@ -5,7 +5,7 @@ import styles from './index.module.css';
 import Link from 'next/link';
 import CharactersContext from '@/state/characters/Context';
 import FavoritesContext from '@/state/favorites/Context';
-
+import { CharacterDetails } from '@/interfaces/character';
 export default function Results({ favoritesOnly }: { favoritesOnly: boolean }) {
   const { characters } = useContext(CharactersContext);
   const { favorites, addFavorite, removeFavorite } =
@@ -13,7 +13,7 @@ export default function Results({ favoritesOnly }: { favoritesOnly: boolean }) {
   return (
     <div className={styles.results}>
       {Object.entries(characters).map(
-        ([id, { imagePath, imageExtension, name, description }]) => {
+        ([id, { imagePath, imageExtension, name, description }]: [string, CharacterDetails]) => {
           const isFavorite = id in favorites;
           return (
             (!favoritesOnly || isFavorite) && (

@@ -6,6 +6,7 @@ import { useContext, useRef } from 'react';
 import CharactersContext from '@/state/characters/Context';
 import { getCharacters } from '@/api';
 import FavoritesContext from '@/state/favorites/Context';
+import { Character } from '@/interfaces/character';
 
 export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
   const requestRef = useRef(Promise.resolve());
@@ -15,6 +16,7 @@ export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
   const numResults = favoritesOnly
     ? characterIds.filter((id) => id in favorites).length
     : characterIds.length;
+
   return (
     <div className={styles.searchWithResults}>
       <div className={styles.search}>
@@ -26,7 +28,7 @@ export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
           onChange={(event) => {
             const promise = getCharacters(event.target.value, undefined);
             requestRef.current = requestRef.current.then(() =>
-              promise.then(setCharacters)
+              promise.then((value: any) => setCharacters(value as Character[]))
             );
           }}
         />

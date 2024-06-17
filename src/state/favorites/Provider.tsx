@@ -2,7 +2,7 @@
 import { ReactNode, useEffect, useReducer } from "react";
 import reducer from "./reducer";
 import Context from "./Context";
-import { Character } from "@/interfaces/character";
+import { Character, CharacterDetails } from "@/interfaces/character";
 
 interface FavoritesProviderProps {
   initialState: Character[];
@@ -17,7 +17,7 @@ export default function FavoritesProvider({
   const loadFavorites = (characters: Character[]) =>
     dispatch({ type: "LOAD", payload: characters });
 
-  const addFavorite = (id: any, character: Character) =>
+  const addFavorite = (id: any, character: CharacterDetails) =>
     dispatch({ type: "ADD", payload: { id, character } });
 
   const removeFavorite = (id: any) => dispatch({ type: "REMOVE", payload: id });

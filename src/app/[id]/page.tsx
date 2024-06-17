@@ -16,6 +16,8 @@ export default async function Page({ params: { id } }: { params: { id: any } }) 
         image={`${imagePath}/portrait_uncanny.${imageExtension}`}
         name={name}
         description={description}
+        imagePath={imagePath}
+        imageExtension={imageExtension}
       />
       <h2 className={styles.subtitle}>COMICS</h2>
       <ComicCarousel comics={comics} className={styles.carousel} />

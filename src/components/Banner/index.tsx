@@ -11,10 +11,12 @@ export interface BannerProps {
   image: string;
   name: string;
   description: string;
+  imagePath: string;
+  imageExtension: string;
 }
 
 
-export default function Banner({ image, name, description }: BannerProps) {
+export default function Banner({ image, name, description, imagePath, imageExtension }: BannerProps) {
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoritesContext);
   const { id } = useParams<{ id: any }>();
@@ -32,7 +34,12 @@ export default function Banner({ image, name, description }: BannerProps) {
             onClick={() => {
               isFavorite
                 ? removeFavorite(id)
-                : addFavorite(id, { image, name, description });
+                : addFavorite(id, {
+                  name,
+                  description,
+                  imagePath,
+                  imageExtension,
+                });
             }}
           />
         </div>

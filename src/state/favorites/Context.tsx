@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-import { Character } from "@/interfaces/character";
+import { Character, CharacterDetails } from "@/interfaces/character";
 
 export interface FavoritesContextType {
   favorites: { [id: string]: Character };
-  addFavorite: (id: any, character: Character) => void;
+  addFavorite: (id: any, character: CharacterDetails) => void;
   removeFavorite: (id: any) => void;
 }
 
