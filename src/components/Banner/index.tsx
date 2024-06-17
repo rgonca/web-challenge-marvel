@@ -17,7 +17,7 @@ export interface BannerProps {
 export default function Banner({ image, name, description }: BannerProps) {
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoritesContext);
-  const { id } = useParams();
+  const { id } = useParams<{ id: any }>();
   const isFavorite = id in favorites;
   return (
     <div className={styles.banner}>

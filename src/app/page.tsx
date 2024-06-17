@@ -14,8 +14,8 @@ export default async function Page() {
       initialState={characters}
     >
       <main className={styles.main}>
-        <Search />
-        <Results />
+        <Search favoritesOnly={false}/>
+        <Results favoritesOnly={false}/>
       </main>
     </CharactersProvider>
   );

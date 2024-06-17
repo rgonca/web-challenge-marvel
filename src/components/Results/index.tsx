@@ -10,7 +10,6 @@ export default function Results({ favoritesOnly }: { favoritesOnly: boolean }) {
   const { characters } = useContext(CharactersContext);
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoritesContext);
-    console.log('characters', characters)
   return (
     <div className={styles.results}>
       {Object.entries(characters).map(
@@ -24,8 +23,6 @@ export default function Results({ favoritesOnly }: { favoritesOnly: boolean }) {
                   name={name}
                   fullHeart={isFavorite}
                   onClickHeart={(event) => {
-                    // Este `event.preventDefault()` está para evitar que rediriga
-                    // hacia donde apunta el <Link /> que envuelve este componente
                     event.preventDefault();
                     isFavorite
                       ? removeFavorite(id)

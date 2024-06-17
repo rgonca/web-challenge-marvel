@@ -8,7 +8,6 @@ import { getCharacters } from '@/api';
 import FavoritesContext from '@/state/favorites/Context';
 
 export default function Search({ favoritesOnly }) {
-
   const requestRef = useRef(Promise.resolve());
   const { characters, setCharacters } = useContext(CharactersContext);
   const { favorites } = useContext(FavoritesContext);
