@@ -1,5 +1,5 @@
-import Comic from '../Comic';
-import styles from './index.module.css';
+import Comic from '../Comic'
+import styles from './index.module.css'
 
 export default ({ className = '' }: { className?: string }) => (
   <div className={[styles.carousel, className].join(' ')}>
@@ -15,4 +15,4 @@ export default ({ className = '' }: { className?: string }) => (
     <Comic />
     <Comic />
   </div>
-);
+)

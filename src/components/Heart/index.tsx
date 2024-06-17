@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 interface HeartProps {
-  empty: boolean;
-  className: string;
+  empty: boolean
+  className: string
 }
 
 export default ({ empty, className }: HeartProps) => (
@@ -14,4 +14,4 @@ export default ({ empty, className }: HeartProps) => (
     height={21.68}
     priority
   />
-);
+)

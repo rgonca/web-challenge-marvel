@@ -1,13 +1,13 @@
-import { headers } from 'next/headers';
-import Image from 'next/image';
-import styles from './page.module.css';
-import Heart from '@/components/Heart';
-import ComicCarousel from '@/components/ComicCarousel';
-import isMobile from '@/utils/isMobile';
+import { headers } from 'next/headers'
+import Image from 'next/image'
+import styles from './page.module.css'
+import Heart from '@/components/Heart'
+import ComicCarousel from '@/components/ComicCarousel'
+import isMobile from '@/utils/isMobile'
 
-export default function Page() {
-  console.log(headers().get('User-Agent'));
-  const isMobileDevice = isMobile();
+export default function Page () {
+  console.log(headers().get('User-Agent'))
+  const isMobileDevice = isMobile()
   return (
     <main className={styles.main}>
       <div className={styles.banner}>
@@ -35,5 +35,5 @@ export default function Page() {
       <h2 className={styles.subtitle}>COMICS</h2>
       <ComicCarousel className={styles.carousel} />
     </main>
-  );
+  )
 }

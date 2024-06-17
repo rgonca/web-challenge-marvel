@@ -1,20 +1,20 @@
-import { ReactNode } from 'react';
-import styles from './layout.module.css';
-import { Roboto_Condensed } from 'next/font/google';
-import Heart from '@/components/Heart';
-import Logo from '@/components/Logo';
+import { type ReactNode } from 'react'
+import styles from './layout.module.css'
+import { Roboto_Condensed } from 'next/font/google'
+import Heart from '@/components/Heart'
+import Logo from '@/components/Logo'
 
 export const metadata = {
   title: 'Zara Web Challenge',
-  description: 'Prueba técnica de Zara - Roberto Gonzalez',
-};
+  description: 'Prueba técnica de Zara - Roberto Gonzalez'
+}
 
 // If loading a variable font, you don't need to specify the font weight
 const robotoCondensed = Roboto_Condensed({
-  subsets: ['latin'],
-});
+  subsets: ['latin']
+})
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout ({ children }: { children: ReactNode }) {
   return (
     <html
       lang='en'
@@ -31,5 +31,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
       </body>
     </html>
-  );
+  )
 }

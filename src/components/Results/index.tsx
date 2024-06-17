@@ -1,5 +1,5 @@
-import Card from '../Card';
-import styles from './index.module.css';
+import Card from '../Card'
+import styles from './index.module.css'
 
 export default () => (
   <div className={styles.results}>
@@ -11,4 +11,4 @@ export default () => (
     <Card />
     <Card />
   </div>
-);
+)

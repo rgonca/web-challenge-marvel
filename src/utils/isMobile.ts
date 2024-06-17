@@ -1,13 +1,13 @@
-import { headers } from "next/headers";
+import { headers } from 'next/headers'
 
 export default () => {
-  const userAgent = headers()?.get("User-Agent");
+  const userAgent = headers()?.get('User-Agent')
   if (!userAgent) {
-    return false;
+    return false
   }
 
   return userAgent
-    .replace(/ \(.*\)/, "")
-    .split(" ")
-    .some((e) => e.match(/^Mobile($|\/)/));
-};
+    .replace(/ \(.*\)/, '')
+    .split(' ')
+    .some((e) => e.match(/^Mobile($|\/)/))
+}

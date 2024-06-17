@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from './index.module.css';
+import Image from 'next/image'
+import styles from './index.module.css'
 
 export default () => (
   <div className={styles.searchWithResults}>
@@ -19,4 +19,4 @@ export default () => (
     </div>
     <span className={styles.results}>50 RESULTS</span>
   </div>
-);
+)

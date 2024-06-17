@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from './index.module.css';
+import Image from 'next/image'
+import styles from './index.module.css'
 
 export default () => (
   <div className={styles.comic}>
@@ -14,4 +14,4 @@ export default () => (
     </span>
     <span className={styles.year}>1967</span>
   </div>
-);
+)

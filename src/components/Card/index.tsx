@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import styles from './index.module.css';
-import Heart from '../Heart';
-import isMobile from '@/utils/isMobile';
+import Image from 'next/image'
+import styles from './index.module.css'
+import Heart from '../Heart'
+import isMobile from '@/utils/isMobile'
 
 export default () => (
   <div className={styles.card}>
@@ -23,4 +23,4 @@ export default () => (
       <Heart className={styles.heart} empty={Math.random() * 2 > 1} />
     </div>
   </div>
-);
+)
