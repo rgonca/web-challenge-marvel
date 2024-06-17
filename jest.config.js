@@ -1,23 +1,24 @@
-const nextJest = require('next/jest');
+const nextJest = require('next/jest')
 
 const customJestConfig = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
-};
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
+}
 
 const createJestConfig = nextJest({
-  dir: './',
-})(customJestConfig);
+  dir: './'
+})(customJestConfig)
 
 module.exports = async () => {
   // Create Next.js jest configuration presets
-  const jestConfig = await createJestConfig();
+  const jestConfig = await createJestConfig()
 
   // Custom `moduleNameMapper` configuration
   const moduleNameMapper = {
     ...jestConfig.moduleNameMapper,
-    '^@/(.*)$': '<rootDir>/src/$1',
-  };
+    '^@/(.*)$': '<rootDir>/src/$1'
+  }
 
-  return { ...jestConfig, moduleNameMapper };
-};
+  return { ...jestConfig, moduleNameMapper }
+}
