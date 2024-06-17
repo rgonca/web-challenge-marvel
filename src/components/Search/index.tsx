@@ -7,7 +7,7 @@ import CharactersContext from '@/state/characters/Context';
 import { getCharacters } from '@/api';
 import FavoritesContext from '@/state/favorites/Context';
 
-export default function Search({ favoritesOnly }) {
+export default function Search({ favoritesOnly }: { favoritesOnly: boolean }) {
   const requestRef = useRef(Promise.resolve());
   const { characters, setCharacters } = useContext(CharactersContext);
   const { favorites } = useContext(FavoritesContext);
@@ -24,7 +24,7 @@ export default function Search({ favoritesOnly }) {
           className={styles.inputSearch}
           placeholder='Search a character...'
           onChange={(event) => {
-            const promise = getCharacters(event.target.value);
+            const promise = getCharacters(event.target.value, undefined);
             requestRef.current = requestRef.current.then(() =>
               promise.then(setCharacters)
             );

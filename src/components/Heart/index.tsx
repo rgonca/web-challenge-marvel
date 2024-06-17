@@ -4,9 +4,9 @@ import styles from './index.module.css';
 
 interface HeartProps {
   type?: typeof FULL; // Assuming FULL is an object with a src property
-  className: string;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
-  testId: string;
+  className?: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  testId?: string;
 }
 
 export default function Heart({ type = FULL, className, onClick, testId }: HeartProps) {
