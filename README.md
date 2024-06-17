@@ -1,35 +1,119 @@
-# Next.js + Jest
+# WEB CHALLENGE Marvel
 
-This example shows how to configure Jest to work with Next.js.
+https://web-challenge-marvel-husx.vercel.app/
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
+## How to execute
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
+To begin, navigate to https://developer.marvel.com/account and obtain both a public and private key. It may be necessary to create an account in order to do so. 
 
-## Deploy your own
+Next, you will need to create a file named `.env.local` and modify it to include the keys mentioned in the `.env` file.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
-
-## How to Use
-
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
-
-```bash
-npx create-next-app --example with-jest with-jest-app
+```
+NEXT_PUBLIC_KEY=<YOUR PUBLIC API KEY>
+PRIVATE_KEY=<YOUR PRIVATE API KEY>
 ```
 
-```bash
-yarn create next-app --example with-jest with-jest-app
+### Install dependencies:
+
+```sh
+npm install
 ```
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
+### Execute in dev mode:
+
+```sh
+npm run dev
 ```
 
-## Running Tests
+### Execute in prod mode:
 
-```bash
+```sh
+npm run build
+npm run start
+```
+
+### Execute the tests:
+
+```sh
 npm test
+```
+
+### Execute linter:
+
+```sh
+npm run lint
+```
+
+## Used frameworks and libraries
+
+- TypeScript
+- ReactJS
+- NextJS
+- Jest
+
+## Proyect structure
+
+```
+src/
+├── api.ts
+├── app
+│   ├── favicon.ico
+│   ├── favorites
+│   │   └── page.tsx
+│   ├── global.css
+│   ├── [id]
+│   │   ├── page.tsx
+│   │   └── page.module.css
+│   ├── layout.tsx
+│   ├── layout.module.css
+│   ├── page.tsx
+│   └── page.module.css
+├── components
+│   ├── Banner
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── Card
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── Comic
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── ComicCarousel
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── ExternalImage
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── Heart
+│   │   ├── constants.ts
+│   │   ├── empty-heart.svg
+│   │   ├── empty-thick-heart.svg
+│   │   ├── full-heart.svg
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── HeartCounter
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   ├── Logo
+│   │   ├── index.tsx
+│   │   └── logo.svg
+│   ├── Results
+│   │   ├── index.tsx
+│   │   └── index.module.css
+│   └── Search
+│       ├── index.tsx
+│       ├── index.module.css
+│       └── magnifying-glass.svg
+├── state
+│   ├── characters
+│   │   ├── Context.tsx
+│   │   ├── Provider.tsx
+│   │   └── reducer.ts
+│   └── favorites
+│       ├── Context.tsx
+│       ├── Provider.tsx
+│       └── reducer.ts
+└── utils
+    ├── formatters.ts
+    └── getServerSideQueryParams.ts
 ```
