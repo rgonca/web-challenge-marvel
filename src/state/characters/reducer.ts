@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+const reducer = (state: any, action: { type: any; payload: any; }) => {
   switch (action.type) {
     case 'SET':
       return action.payload;
