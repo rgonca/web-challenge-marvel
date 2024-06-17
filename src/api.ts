@@ -21,20 +21,15 @@ export const getCharacters = async (
   nameStartsWith: string | undefined,
   otherParams: any
 ) => {
-  try {
-    const queryParams: { limit: number, nameStartsWith?: string } = {
-      limit: 50
-    }
-    if (typeof nameStartsWith === 'string' && nameStartsWith.length > 0) {
-      queryParams.nameStartsWith = nameStartsWith
-    }
-    return formatCharactersResponse(
-      await getData('characters', { ...queryParams, ...otherParams })
-    )
-  } catch (error) {
-    console.error(error)
-    throw error
+  const queryParams: { limit: number, nameStartsWith?: string } = {
+    limit: 50
   }
+  if (typeof nameStartsWith === 'string' && nameStartsWith.length > 0) {
+    queryParams.nameStartsWith = nameStartsWith
+  }
+  return formatCharactersResponse(
+    await getData('characters', { ...queryParams, ...otherParams })
+  )
 }
 
 export const getCharacter = async (
